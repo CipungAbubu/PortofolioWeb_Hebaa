@@ -1,0 +1,10 @@
+/* Mengimpor dasar (base) dari Tailwind */
+@tailwind base;
+
+/* Mengimpor komponen Tailwind seperti form, button, dll */
+@tailwind components;
+
+/* Mengimpor utilitas Tailwind (kustomisasi untuk layout, warna, dll.) */
+@tailwind utilities;
+
+/* Tambahkan CSS kustom jika diperlukan */
