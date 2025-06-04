@@ -80,15 +80,14 @@ const projects = [
     gallery: [projek5, projek5_a, projek5_b, projek5_c, projek5_d, projek5_e],
   },
   {
-  title: 'FilmInAja - Website Daftar Film',
-  image: projek6,
-  tools: 'HTML, CSS, JavaScript',
-  description: 'Website daftar film yang menampilkan berbagai film populer dan terbaru lengkap dengan informasi sinopsis, rating, dan trailer.',
-  github: 'https://github.com/CipungAbubu/Film_In_Aja.git',
-  device: 'laptop',
-  gallery: [projek6, projek6_a, projek6_b, projek6_c, projek6_d],
-}
-
+    title: 'FilmInAja - Website Daftar Film',
+    image: projek6,
+    tools: 'HTML, CSS, JavaScript',
+    description: 'Website daftar film yang menampilkan berbagai film populer dan terbaru lengkap dengan informasi sinopsis, rating, dan trailer.',
+    github: 'https://github.com/CipungAbubu/Film_In_Aja.git',
+    device: 'laptop',
+    gallery: [projek6, projek6_a, projek6_b, projek6_c, projek6_d],
+  }
 ];
 
 const DeviceFrame = ({ device, children }) => {
@@ -146,165 +145,164 @@ const Projects = () => {
   const visibleProjects = projects.slice(startIndex, startIndex + visibleCards);
 
   return (
-  <div className="min-h-screen bg-gradient-to-r from-white to-gray-200 text-black flex flex-col animate-fadeIn">
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-      <div className="flex items-center mb-12">
-        <h1 className="text-3xl md:text-4xl font-bold text-left text-black mr-4">
-          Proyek
-        </h1>
-        <div className="flex-1 h-1 bg-amber-300 rounded"></div>
-      </div>
-
-      <motion.div
-        initial={{ y: 20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-        className="relative flex items-center"
-      >
-        <button
-          onClick={prevSlide}
-          aria-label="Slide Left"
-          className="bg-amber-300 hover:bg-amber-400 text-white rounded-full p-3 shadow-lg transition fixed sm:absolute left-2 sm:left-0 top-1/2 transform -translate-y-1/2 z-20"
-        >
-          &#8592;
-        </button>
-
-        <div className="w-full px-4 sm:px-12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10">
-            {visibleProjects.map((project, idx) => {
-              const globalIdx = startIndex + idx;
-              return (
-                <div
-                  key={globalIdx}
-                  className="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col hover:shadow-2xl transition-shadow duration-300"
-                >
-                  <DeviceFrame device={project.device}>
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="h-48 sm:h-56 md:h-60 w-full object-cover cursor-pointer"
-                      onClick={() => openImageModal(globalIdx, 0)}
-                    />
-                  </DeviceFrame>
-
-                  <div className="p-6 flex flex-col flex-1">
-                    <h2 className="text-xl font-extrabold text-gray-900 mb-2">
-                      {project.title}
-                    </h2>
-                    <p className="text-sm text-amber-600 font-semibold mb-2">
-                      {project.tools}
-                    </p>
-                    <p className="text-gray-700 flex-1 mb-4">{project.description}</p>
-
-                    {globalIdx === 1 ? (
-                      <>
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center self-start text-amber-600 font-semibold hover:underline gap-2 mb-2"
-                        >
-                          <FaGithub /> GitHub Backend
-                        </a>
-                        <a
-                          href={project.githubFE}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center self-start text-amber-600 font-semibold hover:underline gap-2"
-                        >
-                          <FaGithub /> GitHub Frontend
-                        </a>
-                      </>
-                    ) : (
-                      <>
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center self-start text-amber-600 font-semibold hover:underline gap-2 mb-2"
-                        >
-                          <FaGithub /> GitHub Repository
-                        </a>
-
-                        {globalIdx === 0 && project.demo && (
-                          <a
-                            href={project.demo}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-block mt-2 text-blue-600 hover:bg-amber-600 font-semibold py-2 px-4 rounded transition"
-                          >
-                            🎥 Lihat Video Demo
-                          </a>
-                        )}
-                      </>
-                    )}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+    <div className="min-h-screen bg-gradient-to-r from-white to-gray-200 text-black flex flex-col animate-fadeIn">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <div className="flex items-center mb-12">
+          <h1 className="text-3xl md:text-4xl font-bold text-left text-black mr-4">
+            Proyek
+          </h1>
+          <div className="flex-1 h-1 bg-amber-300 rounded"></div>
         </div>
 
-        <button
-          onClick={nextSlide}
-          aria-label="Slide Right"
-          className="bg-amber-300 hover:bg-amber-400 text-white rounded-full p-3 shadow-lg transition fixed sm:absolute right-2 sm:right-0 top-1/2 transform -translate-y-1/2 z-20"
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="relative flex items-center"
         >
-          &#8594;
-        </button>
-      </motion.div>
-    </div>
-
-    {/* Modal Gambar */}
-    {selectedProjectIndex !== null && (
-      <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50 p-4 sm:p-8 overflow-auto">
-        <div className="relative max-w-4xl w-full max-h-full flex flex-col items-center">
           <button
-            className="absolute top-3 right-3 bg-white text-black rounded-full p-1 px-3 text-lg shadow hover:bg-red-500 hover:text-white transition z-30"
-            onClick={closeModal}
-            aria-label="Close Image"
+            onClick={prevSlide}
+            aria-label="Slide Left"
+            className="bg-amber-300 hover:bg-amber-400 text-white rounded-full p-3 shadow-lg transition absolute left-2 top-1/2 transform -translate-y-1/2 z-20"
           >
-            ✖
+            &#8592;
           </button>
 
-          {projects[selectedProjectIndex].gallery ? (
-            <div className="flex flex-col items-center w-full">
+          <div className="w-full px-4 sm:px-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10">
+              {visibleProjects.map((project, idx) => {
+                const globalIdx = startIndex + idx;
+                return (
+                  <div
+                    key={globalIdx}
+                    className="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col hover:shadow-2xl transition-shadow duration-300"
+                  >
+                    <DeviceFrame device={project.device}>
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="h-48 sm:h-56 md:h-60 w-full object-cover cursor-pointer"
+                        onClick={() => openImageModal(globalIdx, 0)}
+                      />
+                    </DeviceFrame>
+
+                    <div className="p-6 flex flex-col flex-1">
+                      <h2 className="text-xl font-extrabold text-gray-900 mb-2">
+                        {project.title}
+                      </h2>
+                      <p className="text-sm text-amber-600 font-semibold mb-2">
+                        {project.tools}
+                      </p>
+                      <p className="text-gray-700 flex-1 mb-4">{project.description}</p>
+
+                      {globalIdx === 1 ? (
+                        <>
+                          <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center self-start text-amber-600 font-semibold hover:underline gap-2 mb-2"
+                          >
+                            <FaGithub /> GitHub Backend
+                          </a>
+                          <a
+                            href={project.githubFE}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center self-start text-amber-600 font-semibold hover:underline gap-2"
+                          >
+                            <FaGithub /> GitHub Frontend
+                          </a>
+                        </>
+                      ) : (
+                        <>
+                          <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center self-start text-amber-600 font-semibold hover:underline gap-2 mb-2"
+                          >
+                            <FaGithub /> GitHub Repository
+                          </a>
+
+                          {globalIdx === 0 && project.demo && (
+                            <a
+                              href={project.demo}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-block mt-2 text-blue-600 hover:bg-amber-600 font-semibold py-2 px-4 rounded transition"
+                            >
+                              🎥 Lihat Video Demo
+                            </a>
+                          )}
+                        </>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <button
+            onClick={nextSlide}
+            aria-label="Slide Right"
+            className="bg-amber-300 hover:bg-amber-400 text-white rounded-full p-3 shadow-lg transition absolute right-2 top-1/2 transform -translate-y-1/2 z-20"
+          >
+            &#8594;
+          </button>
+        </motion.div>
+      </div>
+
+      {/* Modal Gambar */}
+      {selectedProjectIndex !== null && (
+        <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50 p-4 sm:p-8 overflow-auto">
+          <div className="relative max-w-4xl w-full max-h-full flex flex-col items-center">
+            <button
+              className="absolute top-3 right-3 bg-white text-black rounded-full p-1 px-3 text-lg shadow hover:bg-red-500 hover:text-white transition z-30"
+              onClick={closeModal}
+              aria-label="Close Image"
+            >
+              ✖
+            </button>
+
+            {projects[selectedProjectIndex].gallery ? (
+              <div className="flex flex-col items-center w-full">
+                <img
+                  src={projects[selectedProjectIndex].gallery[selectedImageIndex]}
+                  alt="Gallery"
+                  className="w-full max-h-[80vh] sm:max-h-[90vh] object-contain rounded-lg"
+                />
+                <div className="flex justify-between w-full mt-4 px-12 sm:px-0 relative">
+                  <button
+                    onClick={prevImage}
+                    aria-label="Slide Left"
+                    className="bg-amber-300 hover:bg-amber-400 text-white rounded-full p-3 shadow-lg transition"
+                  >
+                    &#8592;
+                  </button>
+
+                  <button
+                    onClick={nextImage}
+                    aria-label="Slide Right"
+                    className="bg-amber-300 hover:bg-amber-400 text-white rounded-full p-3 shadow-lg transition"
+                  >
+                    &#8594;
+                  </button>
+                </div>
+              </div>
+            ) : (
               <img
-                src={projects[selectedProjectIndex].gallery[selectedImageIndex]}
-                alt="Gallery"
+                src={projects[selectedProjectIndex].image}
+                alt="Preview"
                 className="w-full max-h-[80vh] sm:max-h-[90vh] object-contain rounded-lg"
               />
-              <div className="flex justify-between w-full mt-4 px-12 sm:px-0 relative">
-                <button
-                  onClick={prevImage}
-                  aria-label="Slide Left"
-                  className="bg-amber-300 hover:bg-amber-400 text-white rounded-full p-3 shadow-lg transition"
-                >
-                  &#8592;
-                </button>
-
-                <button
-                  onClick={nextImage}
-                  aria-label="Slide Right"
-                  className="bg-amber-300 hover:bg-amber-400 text-white rounded-full p-3 shadow-lg transition"
-                >
-                  &#8594;
-                </button>
-              </div>
-            </div>
-          ) : (
-            <img
-              src={projects[selectedProjectIndex].image}
-              alt="Preview"
-              className="w-full max-h-[80vh] sm:max-h-[90vh] object-contain rounded-lg"
-            />
-          )}
+            )}
+          </div>
         </div>
-      </div>
-    )}
-  </div>
-);
-
+      )}
+    </div>
+  );
 };
 
 export default Projects;
