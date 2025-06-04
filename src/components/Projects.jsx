@@ -5,6 +5,7 @@ import projek2 from '../assets/projek2.jpg';
 import projek3 from '../assets/projek3.jpg';
 import projek4 from '../assets/projek4.jpg';
 import projek5 from '../assets/projek5.jpg';
+import projek6 from '../assets/projek6.jpg';
 
 import projek2_0 from '../assets/projek2_0.jpg';
 import projek2_a from '../assets/projek2_a.jpg';
@@ -21,6 +22,11 @@ import projek5_b from '../assets/projek5_b.jpg';
 import projek5_c from '../assets/projek5_c.jpg';
 import projek5_d from '../assets/projek5_d.jpg';
 import projek5_e from '../assets/projek5_e.jpg';
+
+import projek6_a from '../assets/projek6_a.jpg';
+import projek6_b from '../assets/projek6_b.jpg';
+import projek6_c from '../assets/projek6_c.jpg';
+import projek6_d from '../assets/projek6_d.jpg';
 
 import { MdLaptopMac } from 'react-icons/md';
 import { FiSmartphone } from "react-icons/fi";
@@ -73,6 +79,16 @@ const projects = [
     device: 'laptop',
     gallery: [projek5, projek5_a, projek5_b, projek5_c, projek5_d, projek5_e],
   },
+  {
+  title: 'FilmInAja - Website Daftar Film',
+  image: projek6,
+  tools: 'HTML, CSS, JavaScript',
+  description: 'Website daftar film yang menampilkan berbagai film populer dan terbaru lengkap dengan informasi sinopsis, rating, dan trailer.',
+  github: 'https://github.com/CipungAbubu/Film_In_Aja.git',
+  device: 'laptop',
+  gallery: [projek6, projek6_a, projek6_b, projek6_c, projek6_d],
+}
+
 ];
 
 const DeviceFrame = ({ device, children }) => {
@@ -100,7 +116,7 @@ const Projects = () => {
   };
 
   const nextSlide = () => {
-    setStartIndex((prev) => (prev >= projects.length - visibleCards ? 0 : prev + 1));
+    setStartIndex((prev) => (prev >= projects.length - visibleCards ? 0 : prev + 3));
   };
 
   const openImageModal = (projectIdx, imgIdx = 0) => {
