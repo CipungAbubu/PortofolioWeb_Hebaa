@@ -81,7 +81,7 @@ const projects = [
     github: 'https://github.com/CipungAbubu/BakeUri-KoreanCake.git',
     device: 'laptop',
     gallery: [projek5, projek5_a, projek5_b, projek5_c, projek5_d, projek5_e],
-    live: 'https://bakeuri.netlify.app/', // Added live link
+    live: 'https://bakeuri.netlify.app/', 
   },
   {
     title: 'FilmInAja - Website Daftar Film',
@@ -91,7 +91,7 @@ const projects = [
     github: 'https://github.com/CipungAbubu/Film_In_Aja.git',
     device: 'laptop',
     gallery: [projek6, projek6_a, projek6_b, projek6_c, projek6_d],
-    live: 'https://filminajaa.netlify.app/', // Added live link
+    live: 'https://filminajaaa.netlify.app/', 
   }
 ];
 
