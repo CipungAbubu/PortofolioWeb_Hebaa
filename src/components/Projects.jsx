@@ -30,7 +30,8 @@ import projek6_d from '../assets/projek6_d.jpg';
 
 import { MdLaptopMac } from 'react-icons/md';
 import { FiSmartphone } from "react-icons/fi";
-import { FaGithub } from 'react-icons/fa';
+import { FaGithub, FaAndroid } from 'react-icons/fa'; // Import Android icon
+import { SiNetlify } from 'react-icons/si'; // Import Netlify icon
 import { motion } from 'framer-motion';
 
 const projects = [
@@ -59,6 +60,7 @@ const projects = [
     tools: 'Node.js, Express.js, MongoDB, Postman, MVC Pattern, CORS | September 2024',
     description: 'Backend aplikasi untuk mengelola peminjaman buku dan menghitung denda otomatis.',
     github: 'https://github.com/CipungAbubu/TugasMinggu8_Backend.git',
+    demo: 'https://drive.google.com/file/d/1tTps56nHam99mEjOI-gvRj0NvnzhTBmz/view?usp=sharing', 
     device: 'laptop',
   },
   {
@@ -69,6 +71,7 @@ const projects = [
     github: 'https://github.com/CipungAbubu/Apk_BukuBooks.git',
     device: 'phone',
     gallery: [projek4_a, projek4_b, projek4_c],
+    apk: 'https://drive.google.com/file/d/1XXN0t0MhVMc8b5QpbrvOlhufTDNDBB_2/view?usp=drivesdk', // Added APK download link
   },
   {
     title: 'BakeUri - Korean Cake Shop Website',
@@ -78,6 +81,7 @@ const projects = [
     github: 'https://github.com/CipungAbubu/BakeUri-KoreanCake.git',
     device: 'laptop',
     gallery: [projek5, projek5_a, projek5_b, projek5_c, projek5_d, projek5_e],
+    live: 'https://bakeuri.netlify.app/', // Added live link
   },
   {
     title: 'FilmInAja - Website Daftar Film',
@@ -87,6 +91,7 @@ const projects = [
     github: 'https://github.com/CipungAbubu/Film_In_Aja.git',
     device: 'laptop',
     gallery: [projek6, projek6_a, projek6_b, projek6_c, projek6_d],
+    live: 'https://filminajaa.netlify.app/', // Added live link
   }
 ];
 
@@ -111,7 +116,7 @@ const Projects = () => {
   const visibleCards = 3;
 
   const prevSlide = () => {
-    setStartIndex((prev) => (prev === 0 ? projects.length - visibleCards : prev - 1));
+    setStartIndex((prev) => (prev === 0 ? projects.length - visibleCards : prev - 3));
   };
 
   const nextSlide = () => {
@@ -233,6 +238,50 @@ const Projects = () => {
                               className="inline-block mt-2 text-blue-600 hover:bg-amber-600 font-semibold py-2 px-4 rounded transition"
                             >
                               🎥 Lihat Video Demo
+                            </a>
+                          )}
+
+                          {globalIdx === 2 && project.demo && (
+                            <a
+                              href={project.demo}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-block mt-2 text-blue-600 hover:bg-amber-600 font-semibold py-2 px-4 rounded transition"
+                            >
+                              🎥 Lihat Video Demo
+                            </a>
+                          )}
+
+                          {globalIdx === 3 && project.apk && (
+                            <a
+                              href={project.apk}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center self-start text-amber-600 font-semibold hover:underline gap-2 mt-2"
+                            >
+                              <FaAndroid /> Download APK
+                            </a>
+                          )}
+
+                          {globalIdx === 4 && project.live && (
+                            <a
+                              href={project.live}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center self-start text-amber-600 font-semibold hover:underline gap-2 mt-2"
+                            >
+                              <SiNetlify /> Lihat Website
+                            </a>
+                          )}
+
+                          {globalIdx === 5 && project.live && (
+                            <a
+                              href={project.live}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center self-start text-amber-600 font-semibold hover:underline gap-2 mt-2"
+                            >
+                              <SiNetlify /> Lihat Website
                             </a>
                           )}
                         </>
