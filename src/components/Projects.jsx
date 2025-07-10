@@ -28,6 +28,13 @@ import projek6_b from '../assets/projek6_b.jpg';
 import projek6_c from '../assets/projek6_c.jpg';
 import projek6_d from '../assets/projek6_d.jpg';
 
+import projek7 from '../assets/projek7.jpg';
+import projek7_a from '../assets/projek7_a.jpg';
+import projek7_b from '../assets/projek7_b.jpg';
+import projek7_c from '../assets/projek7_c.jpg';
+import projek7_d from '../assets/projek7_d.jpg';
+import projek7_e from '../assets/projek7_e.jpg';
+
 import { MdLaptopMac } from 'react-icons/md';
 import { FiSmartphone } from "react-icons/fi";
 import { FaGithub, FaAndroid } from 'react-icons/fa'; // Import Android icon
@@ -92,7 +99,17 @@ const projects = [
     device: 'laptop',
     gallery: [projek6, projek6_a, projek6_b, projek6_c, projek6_d],
     live: 'https://filminajaaa.netlify.app/', 
-  }
+  },
+  {
+  title: 'NginepYuk! - Booking Vila di Bali',
+  image: projek7,
+  tools: 'HTML, CSS, JavaScript, PWA',
+  description: 'Aplikasi web pemesanan vila di Bali dengan fitur wishlist dan dukungan PWA (Progressive Web App) yang memungkinkan pengguna menyimpan aplikasi ke layar utama dan mengakses secara offline.',
+  github: 'https://github.com/CipungAbubu/NginepYuk.git',
+  device: 'smartphone & laptop',
+  gallery: [projek7_a, projek7_b, projek7_c, projek7_d, projek7_e],
+  live: 'https://nginepyuk.netlify.app/'
+}
 ];
 
 const DeviceFrame = ({ device, children }) => {
@@ -275,6 +292,17 @@ const Projects = () => {
                           )}
 
                           {globalIdx === 5 && project.live && (
+                            <a
+                              href={project.live}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center self-start text-amber-600 font-semibold hover:underline gap-2 mt-2"
+                            >
+                              <SiNetlify /> Lihat Website
+                            </a>
+                          )}
+
+                          {globalIdx === 6 && project.live && (
                             <a
                               href={project.live}
                               target="_blank"
