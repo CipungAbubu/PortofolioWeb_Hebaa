@@ -35,6 +35,12 @@ import projek7_c from '../assets/projek7_c.jpg';
 import projek7_d from '../assets/projek7_d.jpg';
 import projek7_e from '../assets/projek7_e.jpg';
 
+import projek8 from '../assets/projek8.jpg';
+import projek8_a from '../assets/projek8_a.jpg';
+import projek8_b from '../assets/projek8_b.jpg';
+import projek8_c from '../assets/projek8_c.jpg';
+import projek8_d from '../assets/projek8_d.jpg';
+
 import { MdLaptopMac } from 'react-icons/md';
 import { FiSmartphone } from "react-icons/fi";
 import { FaGithub, FaAndroid } from 'react-icons/fa'; // Import Android icon
@@ -106,9 +112,19 @@ const projects = [
   tools: 'HTML, CSS, JavaScript, PWA',
   description: 'Aplikasi web pemesanan vila di Bali dengan fitur wishlist dan dukungan PWA (Progressive Web App) yang memungkinkan pengguna menyimpan aplikasi ke layar utama dan mengakses secara offline.',
   github: 'https://github.com/CipungAbubu/NginepYuk.git',
-  device: 'smartphone & laptop',
+  device: 'laptop',
   gallery: [projek7_a, projek7_b, projek7_c, projek7_d, projek7_e],
   live: 'https://nginepyuk.netlify.app/'
+},
+{
+  title: 'Portofolio – Heba Portofolio Web',
+  image: projek8,
+  tools: 'React, JavaScript, CSS, HTML',
+  description: 'Website portofolio pribadi yang menampilkan data diri, skill, proyek-proyek unggulan, serta tautan ke media sosial untuk memperkenalkan diri sebagai web developer.',
+  github: 'https://github.com/CipungAbubu/PortofolioWeb_Hebaa.git',
+  device: 'laptop',
+  gallery: [projek8_a, projek8_b, projek8_c, projek8_d],
+  live: 'https://hebaaa-portofoliooo-web.vercel.app/',
 }
 ];
 
@@ -303,6 +319,17 @@ const Projects = () => {
                           )}
 
                           {globalIdx === 6 && project.live && (
+                            <a
+                              href={project.live}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center self-start text-amber-600 font-semibold hover:underline gap-2 mt-2"
+                            >
+                              <SiNetlify /> Lihat Website
+                            </a>
+                          )}
+
+                          {globalIdx === 7 && project.live && (
                             <a
                               href={project.live}
                               target="_blank"
